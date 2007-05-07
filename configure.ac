@@ -20,7 +20,7 @@
 #
 # PATCHLEVEL is optional; comment/uncomment and adjust as required.
 #
-# MINGW_AC_DEFINE_PACKAGE_ID([PATCHLEVEL],    [1])
+  MINGW_AC_DEFINE_PACKAGE_ID([PATCHLEVEL],    [1])
 #
 # DLL_VERSION is required; installed DLLs will be versioned, by
 # appending a hyphen, the specified tag value, and then the `.dll'
@@ -75,9 +75,9 @@
 #
   AC_SUBST([GNURX_LIB])
   AC_SUBST([CC_QUALIFIED], ["$CC $CC_QUALIFIED"])
-  LDFLAGS='-Wl,--enable-auto-image-base -Wl,--out-implib,libgnurx.dll.a'
+  LDFLAGS="$LDFLAGS -Wl,--enable-auto-image-base -Wl,--out-implib,libgnurx.dll.a"
   test -n "${GNURX_LIB}" && LDFLAGS="$LDFLAGS -Wl,--output-def,libgnurx.def"
   AC_CONFIG_FILES([Makefile])
   AC_OUTPUT
 #
-# $RCSfile$Revision: 1.1 $: end of file
+# $RCSfile$Revision: 1.2 $: end of file
