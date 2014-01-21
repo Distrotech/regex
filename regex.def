@@ -1,0 +1,16 @@
+EXPORTS
+  re_syntax_options DATA
+  re_set_syntax
+  re_compile_pattern
+  re_compile_fastmap
+  re_search
+  re_search_2
+  re_match
+  re_match_2
+  re_set_registers
+  re_comp
+  re_exec
+  regcomp
+  regexec
+  regerror
+  regfree
