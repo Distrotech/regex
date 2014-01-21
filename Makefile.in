@@ -78,16 +78,16 @@ gnurx.lib: libgnurx-$(DLLVERSION).dll
 install: install-dll @install_dev@
 
 install-dll:
-	mkdir -p ${bindir}
-	cp -p $(BINDIST_FILES) ${bindir}
+	mkdir -p $(DESTDIR)${bindir}
+	cp -p $(BINDIST_FILES) $(DESTDIR)${bindir}
 
 install-dev:
-	mkdir -p ${includedir} ${libdir}
-	cp -p ${srcdir}/regex.h ${includedir}
-	cp -p $(DEVDIST_FILES) ${libdir}
+	mkdir -p $(DESTDIR)${includedir} $(DESTDIR)${libdir}
+	cp -p ${srcdir}/regex.h $(DESTDIR)${includedir}
+	cp -p $(DEVDIST_FILES) $(DESTDIR)${libdir}
 	for s in 3 7; do \
-	  mkdir -p ${mandir}/man$$s; \
-	  gzip -c ${srcdir}/regex.$$s > ${mandir}/man$$s/regex.$$s.gz; \
+	  mkdir -p $(DESTDIR)${mandir}/man$$s; \
+	  gzip -c ${srcdir}/regex.$$s > $(DESTDIR)${mandir}/man$$s/regex.$$s.gz; \
 	done
 
 dist:	 bindist devdist srcdist
